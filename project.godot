@@ -8,10 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody",
+"class": "LivingEntity",
+"language": "GDScript",
+"path": "res://script/LivingEntity.gd"
+} ]
+_global_script_class_icons={
+"LivingEntity": ""
+}
+
 [application]
 
 config/name="piate nochey s fedorom"
-run/main_scene="res://test_meha.tscn"
+run/main_scene="res://tscn/test_meha.tscn"
 config/icon="res://icon.png"
 
 [autoload]
