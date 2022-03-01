@@ -6,19 +6,28 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends KinematicBody2D
 
-var speed = 3100 # скорость в 
+export (int) var speed = 60
 
-func _ready():
-	$\"/root/Global\".player = self # передаем игрока в глобальную сцену
+var velocity = Vector2()
+
+func get_input():
+	velocity = Input.get_vector(\"left\",\"right\",\"up\",\"down\") * speed
 
 func _physics_process(delta):
-	move_and_slide(speed * delta * Input.get_vector(\"left\", \"right\", \"up\", \"down\")*(Input.get_action_strength(\"run\")/2+1)) # движение
-	look_at(get_global_mouse_position()) # поворот
-	
-	if Input.is_action_just_pressed(\"shoot\"): # стрельба
-		var object = $shoot_ray.get_collider() as Node2D # получаем узел, по которому стреляем
-		if object and object.is_in_group(\"enemy\"):
-			object.dead() #если враг, то его убиваем
+	get_input()
+	velocity = move_and_slide(velocity)
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+func _process(delta):
+	look_at(get_global_mouse_position())
+#	$\"Camera2D/ДляФнафа\".rotation_degrees =-rotation
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function b
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -36,10 +45,9 @@ scale = Vector2( 1.00641, 0.579148 )
 current = true
 zoom = Vector2( 0.1, 0.1 )
 
-[node name="player" type="Sprite" parent="."]
-position = Vector2( -0.855134, 1.27095 )
+[node name="БезИмеи" type="Sprite" parent="."]
+position = Vector2( 0, 1 )
 rotation = 1.5708
-scale = Vector2( 1.13131, 1.29982 )
 texture = ExtResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -53,7 +61,3 @@ stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="shoot_ray" type="RayCast2D" parent="."]
-enabled = true
-cast_to = Vector2( 200, 0 )
