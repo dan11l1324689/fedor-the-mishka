@@ -32,4 +32,3 @@ func respawn_timeout(): # когда враг респавнится
 	$Sprite.visible = true # показываем врага
 	$CollisionShape2D.disabled = false # включаем коллизию
 
-

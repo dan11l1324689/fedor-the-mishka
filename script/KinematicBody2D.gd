@@ -1,5 +1,4 @@
-extends KinematicBody2D
-
+extends LivingEntity
 
 func _physics_process(delta):
 	var player = $"/root/Global".player as KinematicBody2D
