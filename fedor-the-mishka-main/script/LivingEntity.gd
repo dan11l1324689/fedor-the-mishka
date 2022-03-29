@@ -25,7 +25,7 @@ enum EntityState{
 export(EntityState) var state =EntityState.INACTIVE setget new_state
 func new_state(new_value):
 	state=new_value
-func check_visual_contack(other:LivingEntity)->bool:
+func check_visual_contact(other:LivingEntity)->bool:
 	var raycast=RayCast.new()
 	gamemanager.add_chiic(raycast)
 	raycast.cast_to=other.position - position
