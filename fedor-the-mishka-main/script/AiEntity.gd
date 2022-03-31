@@ -2,6 +2,8 @@ extends LivingEntity
 class_name AiEntity
 export var visibilty:NodePath 
 var chase_target 
+var chase_timeout_time
+var patrol
 var target=Vector2()
 func update_target():
 	pass
@@ -23,7 +25,8 @@ func process_inactive():
 	pass
 	if v.is_on_screen():
 		new_state(EntityState.PATROL)
-
+func update_patrol_target():
+	var pre_target = patrol
 
 
 func process_alive():
@@ -49,4 +52,11 @@ func target_entity_position(entity : LivingEntity)-> Vector2:
 func process_shase():
 	update_final (target_entity_position(chase_target))
 	update_target()
-	var new_chase_state 
+	var new_chase_target_visibility : bool = check_visual_contact(chase_target)
+	if new_chase_target_visibility and not new_chase_target_visibility and chase_timeout_time != -1:
+		chase_timeout_timer.start(max(chase_timeout_time))
+	elif new_chase_chase_visibility:
+		pass
+
+func chase_timeout():
+	chase_time_out
