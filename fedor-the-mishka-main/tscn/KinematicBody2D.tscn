@@ -5,8 +5,9 @@
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends KinematicBody2D
+export var alive = true
 
-var speed = 3100 # скорость в 
+var speed = 3000 # скорость в 
 
 func _ready():
 	$\"/root/Global\".player = self # передаем игрока в глобальную сцену
