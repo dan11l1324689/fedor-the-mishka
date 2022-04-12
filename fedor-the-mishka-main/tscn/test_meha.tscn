@@ -41,7 +41,7 @@ shadow_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( -80, 0 )
-color = Color( 0.0705882, 0.0666667, 0.054902, 1 )
+color = Color( 0.188235, 0.176471, 0.145098, 1 )
 
 [node name="Киш" type="Sprite" parent="."]
 position = Vector2( 546, 254 )

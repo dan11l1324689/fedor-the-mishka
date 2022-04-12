@@ -37,3 +37,16 @@ func check_visual_contact(other:LivingEntity)->bool:
 func _ready():
 	pass
 	gamemanager=get_node_or_null(gamemanager_notepath) as GameManager 
+
+enum EntityFactions {
+		NEUTRAL = 0,
+		FRIENDLY = 1,
+		ENEMY = 2,
+}
+export (EntityFactions) var faction : int 
+
+func is_enemy(other : LivingEntity)->bool:
+	if other.faction == EntityFactions.NEUTRAL or faction == EntityFactions.NEUTRAL:
+		return false
+	else:
+		return other.faction != faction

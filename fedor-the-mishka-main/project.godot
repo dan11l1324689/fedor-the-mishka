@@ -45,6 +45,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://player/global.tscn"
+GlobalManager="*res://tscn/global_manager.tscn"
 
 [input]
 
