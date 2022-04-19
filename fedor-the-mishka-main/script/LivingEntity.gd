@@ -4,8 +4,6 @@ func entity_HP_change(new_value):
 class_name LivingEntity
 export var HP:int=10
 export var max_HP:int=10
-export var gamemanager_notepath:NodePath
-var gamemanager:GameManager
 export var speed:float = 200
 export var acceleration:float = 2000
 var velocity:Vector2
@@ -27,7 +25,7 @@ func new_state(new_value):
 	state=new_value
 func check_visual_contact(other:LivingEntity)->bool:
 	var raycast=RayCast.new()
-	gamemanager.add_chiic(raycast)
+	$"/root/GlobalManager".gamemanager.add_child(raycast)
 	raycast.cast_to=other.position - position
 	raycast.position=position
 	raycast.force_raycast_update()
@@ -36,7 +34,6 @@ func check_visual_contact(other:LivingEntity)->bool:
 	return return_olata
 func _ready():
 	pass
-	gamemanager=get_node_or_null(gamemanager_notepath) as GameManager 
 
 enum EntityFactions {
 		NEUTRAL = 0,

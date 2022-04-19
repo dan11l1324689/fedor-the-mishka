@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://script/player.gd"
+}, {
+"base": "AiEntity",
+"class": "RangedEnemy",
+"language": "GDScript",
+"path": "res://script/RangedEnemy.gd"
 } ]
 _global_script_class_icons={
 "AiEntity": "",
 "GameManager": "",
 "LivingEntity": "",
-"Player": ""
+"Player": "",
+"RangedEnemy": ""
 }
 
 [application]
