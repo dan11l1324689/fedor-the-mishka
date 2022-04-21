@@ -1,16 +1,25 @@
 extends LivingEntity
 class_name Player
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
+#var gamemanager : GameManager
+#var weapon : BaseWeapon
 func _ready():
-	pass # Replace with function body.
+	
+	#print($"/root/GlobalManager".gamemanager)
+	#$"/root/GlobalManager".gamemanager.player = self
+	pass
+
+func entity_calculate_target_velocity() -> Vector2:
+	return speed * Input.get_vector("left", "right", "up", "down")*(Input.get_action_strength("run")/2+1)
+
+func _physics_process(delta):
+	look_at(get_global_mouse_position())
+	
+	if Input.is_action_just_pressed("shoot"):
+		var object = $shoot_ray.get_collider() as Node2D
+		if object and object is LivingEntity and is_enemy(object):
+			deal_damage(object as LivingEntity, 10)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func death():
+	$"/root/GlobalManager".gamemanager.restart_scene()

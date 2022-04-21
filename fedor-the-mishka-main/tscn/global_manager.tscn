@@ -2,7 +2,7 @@
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
-var gamemager
+var gamemanager
 
 # Declare member variables here. Examples:
 # var a = 2
