@@ -97,7 +97,7 @@ func process_alive():
 func new_state(new_value):
 	.new_state(new_value)
 	if new_value == EntityState.PATROL:
-		#patrol_position = position
+		patrol_position = position
 		patrol_timeout_timer.start(15)
 		#update_patrol_target()
 	elif new_value != EntityState.PATROL:
