@@ -12,6 +12,7 @@ max_HP = 50
 HP = 20
 speed = 55.0
 faction = 2
+chase_timeout_time = 6
 visibility = NodePath("VisibilityNotifier2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

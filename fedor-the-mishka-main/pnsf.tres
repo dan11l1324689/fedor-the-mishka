@@ -9,7 +9,6 @@
 extents = Vector2( 31.5, 31.5 )
 
 [sub_resource type="StreamTexture" id=6]
-load_path = "res://.import/fnaf_pol.png-233fe7719e6929bf049a677b2730bbf5.stex"
 
 [sub_resource type="OccluderPolygon2D" id=3]
 polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
