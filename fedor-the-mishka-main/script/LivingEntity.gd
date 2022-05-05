@@ -110,10 +110,13 @@ func _physics_process(delta : float):
 func can_see(other : LivingEntity) -> bool:
 	var raycast := RayCast2D.new()
 	$"/root/GlobalManager".gamemanager.add_child(raycast)
+	raycast.enabled=true
 	raycast.cast_to = other.position - position
 	raycast.position = position
+	raycast.add_exception(self)
 	raycast.force_raycast_update()
-	var return_data := raycast.get_collider() as LivingEntity == other
+	var vid :=(raycast.get_collider() as LivingEntity)
+	var return_data := vid == other
 	raycast.queue_free()
 	
 	return return_data

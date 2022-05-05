@@ -9,6 +9,8 @@ extents = Vector2( 2, 6.5 )
 [node name="KinematicBody2D" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 1 )
 speed = 40.0
+faction = 2
+visibility = NodePath("VisibilityNotifier2D")
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.222724, 0.111363 )

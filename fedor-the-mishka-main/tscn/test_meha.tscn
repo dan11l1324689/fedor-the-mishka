@@ -1,15 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://pnsf.tres" type="TileSet" id=1]
 [ext_resource path="res://tscn/KinematicBody2D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://script/GameManager.gd" type="Script" id=3]
 [ext_resource path="res://1546862461_light_11.jpg" type="Texture" id=4]
 [ext_resource path="res://tscn/No2D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://tscn/stul.tscn" type="PackedScene" id=6]
 [ext_resource path="res://radioactive.png" type="Texture" id=7]
 [ext_resource path="res://кИш.png" type="Texture" id=8]
-[ext_resource path="res://tscn/KiicBody2D.tscn" type="PackedScene" id=17]
-[ext_resource path="res://script/No2D.tres.gd" type="Script" id=18]
-[ext_resource path="res://tscn/Kinemat.tscn" type="PackedScene" id=19]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -34,7 +32,6 @@ tile_data = PoolIntArray( -4325438, 536870916, 0, -4325437, 536870916, 0, -43254
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 440, 296 )
-scale = Vector2( 1.24544, 1.15372 )
 acceleration = 100.0
 
 [node name="Light2D" type="Light2D" parent="KinematicBody2D"]
@@ -55,17 +52,12 @@ scale = Vector2( 1.24544, 1.15372 )
 texture = ExtResource( 8 )
 
 [node name="KinematicBody2D2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 477, 397 )
-
-[node name="KinematicBody2D3" parent="." instance=ExtResource( 17 )]
-position = Vector2( 508, 72 )
-rotation = -1.57079
-script = ExtResource( 18 )
-
-[node name="Kinemat" parent="." instance=ExtResource( 19 )]
-position = Vector2( 600, 320 )
+position = Vector2( 424, 288 )
 
 [node name="Radioactive" type="Sprite" parent="."]
 position = Vector2( 296.018, 383.385 )
 scale = Vector2( 0.997721, 1.07686 )
 texture = ExtResource( 7 )
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 456, 224 )

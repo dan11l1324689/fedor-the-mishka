@@ -23,11 +23,12 @@ func select_target(entity : LivingEntity) -> LivingEntity:
 	var best_distance : float = INF
 	for other in entities:
 		if other is LivingEntity:
-			if entity.is_enemy(other) and entity.can_see(other):
-				var distance = entity.position.distance_to(other.position)
-				if best_distance > distance:
-					target = other
-					best_distance = distance
+			if entity.is_enemy(other):
+				if entity.can_see(other):
+					var distance = entity.position.distance_to(other.position)
+					if best_distance > distance:
+						target = other
+						best_distance = distance
 	return target
 
 func register_entity(entity : LivingEntity) -> void:
