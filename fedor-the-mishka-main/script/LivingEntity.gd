@@ -68,7 +68,7 @@ func rebirth():
 # ===== движение
 export var speed : float = 200       # скорость сущности, в пикселях в секунду
 var velocity : Vector2        # сколько пикселей прошла сущность за прошлый кадр
-export var acceleration : float = 2000 # ускорение сущности, в пикселях в секунду в секунду
+export var acceleration : float = 70 # ускорение сущности, в пикселях в секунду в секунду
 
 # функция для расчета скорости движения сущности
 func entity_calculate_target_velocity() -> Vector2:
