@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://script/KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://script/AiEntity.gd" type="Script" id=1]
 [ext_resource path="res://сииииииии.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -8,6 +8,11 @@ extents = Vector2( 2, 6.5 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 1 )
+max_HP = 50
+HP = 150
+speed = 40.0
+faction = 2
+visibility = NodePath("VisibilityNotifier2D")
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.222724, 0.111363 )

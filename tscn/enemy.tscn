@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://script/RangedEnemy.gd" type="Script" id=2]
+[ext_resource path="res://1546862461_light_11.jpg" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 30.0
+
+[node name="enemy" type="KinematicBody2D" groups=["enemy"]]
+script = ExtResource( 2 )
+faction = 2
+chase_timeout_time = 5
+visibility = NodePath("VisibilityNotifier2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="respawn_timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+rect = Rect2( -32, -32, 64, 64 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 3 )
+shadow_enabled = true

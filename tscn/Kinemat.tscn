@@ -1,13 +1,19 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://мени.png" type="Texture" id=1]
-[ext_resource path="res://script/Kinemat.gd" type="Script" id=2]
+[ext_resource path="res://script/RangedEnemy.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 5.5 )
 
 [node name="Kinemat" type="KinematicBody2D"]
 script = ExtResource( 2 )
+max_HP = 50
+HP = 20
+speed = 55.0
+faction = 2
+chase_timeout_time = 6
+visibility = NodePath("VisibilityNotifier2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1.5 )

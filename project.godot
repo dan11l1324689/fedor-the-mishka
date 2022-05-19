@@ -14,31 +14,44 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://script/AiEntity.gd"
 }, {
+"base": "Node",
+"class": "GameManager",
+"language": "GDScript",
+"path": "res://script/GameManager.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "LivingEntity",
 "language": "GDScript",
 "path": "res://script/LivingEntity.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "LivingEntity",
 "class": "Player",
 "language": "GDScript",
 "path": "res://script/player.gd"
+}, {
+"base": "AiEntity",
+"class": "RangedEnemy",
+"language": "GDScript",
+"path": "res://script/RangedEnemy.gd"
 } ]
 _global_script_class_icons={
 "AiEntity": "",
+"GameManager": "",
 "LivingEntity": "",
-"Player": ""
+"Player": "",
+"RangedEnemy": ""
 }
 
 [application]
 
 config/name="piate nochey s fedorom"
-run/main_scene="res://tscn/test_meha.tscn"
+run/main_scene="res://menu la bodi.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://player/global.tscn"
+GlobalManager="*res://tscn/global_manager.tscn"
 
 [input]
 
@@ -66,6 +79,10 @@ shoot={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
+}
+run={
+"deadzone": 0.5,
+"events": [  ]
 }
 
 [physics]
