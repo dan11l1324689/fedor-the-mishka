@@ -41,6 +41,7 @@ func update_target():
 func entity_calculate_target_velocity() -> Vector2:
 	var dist = position.distance_to(target)
 	var vel = position.direction_to(target)* min(speed, dist*10)
+	look_at(target)
 	return vel
 
 func _physics_process(delta : float):

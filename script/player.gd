@@ -22,4 +22,7 @@ func _physics_process(delta):
 
 
 func death():
-	$"/root/GlobalManager".gamemanager.restart_scene()
+	$"/root/GlobalManager".gamemanager.restart_level()
+
+
+

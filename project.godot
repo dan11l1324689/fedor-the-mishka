@@ -25,6 +25,11 @@ _global_script_classes=[ {
 "path": "res://script/LivingEntity.gd"
 }, {
 "base": "LivingEntity",
+"class": "MeleeEnemy",
+"language": "GDScript",
+"path": "res://script/MeleeEnemy.gd"
+}, {
+"base": "LivingEntity",
 "class": "Player",
 "language": "GDScript",
 "path": "res://script/player.gd"
@@ -38,6 +43,7 @@ _global_script_class_icons={
 "AiEntity": "",
 "GameManager": "",
 "LivingEntity": "",
+"MeleeEnemy": "",
 "Player": "",
 "RangedEnemy": ""
 }
